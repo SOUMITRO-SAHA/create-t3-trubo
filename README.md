@@ -7,7 +7,7 @@
 use Turbo's CLI to `init` your project (use PNPM as package manager):
 
 ```bash
-pnpx create-turbo@latest -e (https://github.com/SOUMITRO-SAHA/create-t3-trubo)
+pnpx create-turbo@latest -e https://github.com/SOUMITRO-SAHA/create-t3-trubo
 ```
 
 ## About
