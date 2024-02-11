@@ -1,5 +1,5 @@
 {
-  "name": "bookmarker",
+  "name": "create-t3-turbo",
   "private": true,
   "scripts": {
     "build": "turbo build",
@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
-    "@repo/typescript-config": "workspace:*",
+    "@repo/tsconfig": "workspace:*",
     "prettier": "^3.1.1",
     "turbo": "latest"
   },
