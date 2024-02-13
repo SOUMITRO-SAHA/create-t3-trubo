@@ -41,13 +41,15 @@ packages
 tooling
   ├─ eslint-config
   |   └─ shared, fine-grained, eslint presets
+  ├─ prettier
+  |   └─ shared prettier configuration
   ├─ tailwind
   |   └─ shared tailwind configuration
   └─ tsconfig
       └─ shared tsconfig you can extend from
 ```
 
-> In this template, we use @repo as a placeholder for package names. As a user, you might want to replace it with your own organization or project name. You can use find-and-replace to change all the instances of @acme to something like @my-company or @project-name.
+> In this template, we use @repo as a placeholder for package names. As a user, you might want to replace it with your own organization or project name. You can use find-and-replace to change all the instances of @repo to something like @my-company or @project-name.
 
 ## Quick Start
 

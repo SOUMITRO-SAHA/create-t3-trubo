@@ -20,6 +20,5 @@
   "devDependencies": {
     "@repo/tsconfig": "workspace:*",
     "typescript": "^5.3.3"
-  },
-  "prettier": "@repo/prettier-config"
+  }
 }

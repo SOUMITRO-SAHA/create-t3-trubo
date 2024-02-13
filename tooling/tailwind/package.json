@@ -31,6 +31,5 @@
     "extends": [
       "@repo/eslint-config/base"
     ]
-  },
-  "prettier": "@repo/prettier-config"
+  }
 }
