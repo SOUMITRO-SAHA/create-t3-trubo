@@ -2,14 +2,17 @@
   "name": "@repo/auth",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "exports": {
-    ".": "./src/app/api/auth/[...nextauth]/route.ts"
+    ".": "./src/index.ts",
+    "./env": "./env.ts"
   },
+  "license": "MIT",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "clean": "rm -rf .turbo node_modules",
+    "format": "prettier --check . --ignore-path ../../.gitignore",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@repo/db": "workspace:*",
@@ -36,6 +39,5 @@
     "extends": [
       "@repo/eslint-config/base"
     ]
-  },
-  "prettier": "@repo/prettier-config"
+  }
 }
