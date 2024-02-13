@@ -1,0 +1,28 @@
+{
+  "name": "@repo/db",
+  "version": "0.1.0",
+  "main": "index.ts",
+  "license": "MIT",
+  "exports":{
+    ".": "./index.ts"
+  },
+  "scripts": {
+    "dev": "pnpm with-env prisma studio --port 5556",
+    "clean": "rm -rf .turbo node_modules",
+    "db:generate": "pnpm with-env prisma generate",
+    "db:push": "pnpm with-env prisma db push --skip-generate",
+    "db:studio": "pnpm with-env prisma studio",
+    "with-env": "dotenv -e ../../.env --"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.9.1"
+  },
+  "devDependencies": {
+    "@repo/tsconfig": "workspace:*",
+    "@types/node": "^20.10.6",
+    "dotenv-cli": "^7.3.0",
+    "prisma": "^5.9.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}
