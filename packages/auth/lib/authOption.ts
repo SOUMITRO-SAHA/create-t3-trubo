@@ -14,11 +14,6 @@ export type User = {
 	username: string;
 };
 
-// Define the AuthSession type
-export type AuthSession = {
-	user: User;
-};
-
 // Define the token type
 type Token = {
 	id: string;
@@ -28,6 +23,11 @@ type Token = {
 	username: string;
 };
 
+declare module "next-auth" {
+	interface Session {
+		user: User
+	}
+}
 export const authOptions: NextAuthOptions = {
 	adapter: PrismaAdapter(db),
 	session: {
@@ -46,21 +46,16 @@ export const authOptions: NextAuthOptions = {
 		}),
 	],
 	callbacks: {
-		async session({ token, session }) {
-			if (token) {
-				// Ensure session.user exists and initialize if necessary
-				if (!session.user) {
-					session.user = {} as User;
-				}
-				// Assign token properties to session user object
-				// session.user.id = token.id;
-				session.user.name = token.name;
-				session.user.email = token.email;
-				session.user.image = token.picture;
-				// session.user.username = token.username;
+		async session (opts) {
+			if (!("user" in opts)) throw "unreachable with session strategy";
+	  
+			return {
+			  ...opts.session,
+			  user: {
+				...opts.session.user,
+				id: opts.user.id,
+			  },
 			}
-
-			return session;
 		},
 
 		async jwt({ token, user }) {
